@@ -26,7 +26,7 @@ app.get("/health", (req, res) => {
 
 // Routes
 app.use("/api/v1/support", supportTicketsRoutes);
-app.use("/api/v1/reports", reportsRoutes);
+app.use("/api/reports", reportsRoutes);
 app.use("/api/v1/kyc", kycRoutes);
 
 // Background jobs: retry failed telegram alerts every 30 minutes
