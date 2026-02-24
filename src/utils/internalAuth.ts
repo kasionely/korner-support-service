@@ -23,8 +23,8 @@ export const getUserByToken = async (token: string): Promise<InternalUser | null
         Authorization: `Bearer ${token}`,
       },
     });
-
-    return response.data;
+    // Main-service returns { user: { id, email, ... } }
+    return response.data.user ?? response.data;
   } catch (error) {
     return null;
   }
